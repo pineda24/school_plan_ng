@@ -35,8 +35,8 @@
                                 <select name="idsucursal" id="idsucursal" class="form-control" [(ngModel)]="plan.carrer"
                                     style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar carrera</option>
-                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
-                                        {{ item }}
+                                    <option value="{{ item.clave }}" *ngFor="let item of arrayCarrers">
+                                        {{ item.nombre }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"
                                             style="color: #181823"></i></span>
@@ -50,8 +50,8 @@
                                 <select name="idsucursal" id="idsucursal" class="form-control" [(ngModel)]="plan.materi"
                                     style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar materia</option>
-                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
-                                        {{ item }}
+                                    <option value="{{ item.clave }}" *ngFor="let item of arraySubjects">
+                                        {{ item.descri }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"
                                             style="color: #181823"></i></span>
@@ -91,8 +91,8 @@
                                 <select name="idsucursal" id="idsucursal" class="form-control" [(ngModel)]="plan.reqsim"
                                     style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar materia requisito</option>
-                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
-                                        {{ item }}
+                                    <option value="{{ item.clave }}" *ngFor="let item of arraySubjects">
+                                        {{ item.descri }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"
                                             style="color: #181823"></i></span>
@@ -106,8 +106,8 @@
                                 <select name="idsucursal" id="idsucursal" class="form-control" [(ngModel)]="plan.requi1"
                                     style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar materia requisito</option>
-                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
-                                        {{ item }}
+                                    <option value="{{ item.clave }}" *ngFor="let item of arraySubjects">
+                                        {{ item.descri }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"
                                             style="color: #181823"></i></span>
@@ -121,8 +121,8 @@
                                 <select name="idsucursal" id="idsucursal" class="form-control" [(ngModel)]="plan.requi2"
                                     style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar materia requisito</option>
-                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
-                                        {{ item }}
+                                    <option value="{{ item.clave }}" *ngFor="let item of arraySubjects">
+                                        {{ item.descri }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"
                                             style="color: #181823"></i></span>
@@ -136,8 +136,8 @@
                                 <select name="idsucursal" id="idsucursal" class="form-control" [(ngModel)]="plan.requi3"
                                     style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar materia requisito</option>
-                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
-                                        {{ item }}
+                                    <option value="{{ item.clave }}" *ngFor="let item of arraySubjects">
+                                        {{ item.descri }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"
                                             style="color: #181823"></i></span>
@@ -151,8 +151,8 @@
                                 <select name="idsucursal" id="idsucursal" class="form-control" [(ngModel)]="plan.requi4"
                                     style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar materia requisito</option>
-                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
-                                        {{ item }}
+                                    <option value="{{ item.clave }}" *ngFor="let item of arraySubjects">
+                                        {{ item.descri }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"
                                             style="color: #181823"></i></span>
