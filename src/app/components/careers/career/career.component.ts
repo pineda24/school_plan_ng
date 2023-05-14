@@ -10,7 +10,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class CareerComponent {
 
-  action: any = 'edit';
+  idCareer: any;
+  action: any;
   career: CareerModel = new CareerModel();
 
   constructor(
@@ -19,7 +20,54 @@ export class CareerComponent {
     private router: Router
   ) { }
 
-  saveCollection() {
+  async ngOnInit() {
+    this.idCareer = this.route.snapshot.paramMap.get('id');
+    this.action = this.idCareer ? 'edit' : 'create';
+    if (this.action == 'edit') {
+      this.data.findById('/prestamos', `${this.idCareer}/`).subscribe(
+        (res: any) => {
+          this.career = res.prestamos[0];
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
+  }
 
+  saveCollection() {
+    if (this.action == 'edit') {
+      this.updateCollection();
+    } else {
+      this.createCollection();
+    }
+  }
+
+  async createCollection() {
+    this.data
+      .insertOne('/prestamos', JSON.stringify(this.career))
+      .subscribe(
+        (res: any) => {
+          console.log(res);
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+  }
+
+  async updateCollection() {
+    this.data
+      .updateOnee('/prestamos', `${this.idCareer}/`, JSON.stringify(this.career))
+      .subscribe(
+        (res: any) => {
+          console.log(res);
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 }
