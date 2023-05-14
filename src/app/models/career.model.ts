@@ -1,4 +1,4 @@
-export class career {
+export class CareerModel {
     clave!: number;
     nombre!: string;
     fecalt!: Date;

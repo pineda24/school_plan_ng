@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CareerModel } from 'src/app/models/career.model';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 export class CareerComponent {
 
   action: any = 'edit';
+  career: CareerModel = new CareerModel();
 
   constructor(
     private data: DataService,

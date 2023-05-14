@@ -18,7 +18,8 @@
                         <div class="col">
                             <div class="mb-3 form-floating">
                                 <input type="text" class="form-control" name="clave" id="clave"
-                                    placeholder="Nombre de la plaza" disabled="{{this.action == 'edit'}}" required />
+                                    [(ngModel)]="career.clave" placeholder="Nombre de la plaza"
+                                    disabled="{{this.action == 'edit'}}" required />
                                 <label class="form-label">
                                     <span>Clave</span>
                                     <span class="form-required ps-1">*</span>
@@ -32,13 +33,28 @@
                         <div class="col">
                             <div class="mb-3 form-floating">
                                 <input type="text" class="form-control" name="name" id="name"
-                                    placeholder="Nombre de la carrera" required />
+                                    [(ngModel)]="career.nombre" placeholder="Nombre de la carrera" required />
                                 <label class="form-label">
                                     <span>Nombre</span>
                                     <span class="form-required ps-1">*</span>
                                 </label>
                                 <div class="invalid-feedback">
                                     <div>Nombre requerido</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" *ngIf="this.action == 'edit'">
+                            <div class="mb-3 form-floating">
+                                <input type="date" class="form-control" name="fecalt" id="fecalt"
+                                    [(ngModel)]="career.fecalt" placeholder="Fecha de creado"
+                                    disabled="{{this.action == 'edit'}}" required />
+                                <label class="form-label">
+                                    <span>Fecha de alta</span>
+                                    <span class="form-required ps-1">*</span>
+                                </label>
+                                <div class="invalid-feedback">
+                                    <div>Fecha de alta requerido</div>
                                 </div>
                             </div>
                         </div>
