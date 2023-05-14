@@ -1,4 +1,4 @@
-export class suject {
+export class SujectModel {
   clave!: number;
   descri!: string;
   nsesio!: number;

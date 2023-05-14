@@ -17,8 +17,9 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
                         <div class="col">
                             <div class="mb-3 form-floating">
-                                <input type="text" class="form-control" name="clave" id="clave"
-                                    placeholder="Nombre de la plaza" disabled="{{this.action == 'edit'}}" required />
+                                <input type="number" class="form-control" name="clave" id="clave"
+                                    [(ngModel)]="subject.clave" placeholder="Nombre de la plaza"
+                                    disabled="{{this.action == 'edit'}}" required />
                                 <label class="form-label">
                                     <span>Clave</span>
                                     <span class="form-required ps-1">*</span>
@@ -32,7 +33,7 @@
                         <div class="col">
                             <div class="mb-3 form-floating">
                                 <input type="text" class="form-control" name="name" id="name"
-                                    placeholder="Nombre de la carrera" required />
+                                    [(ngModel)]="subject.descri" placeholder="Nombre de la carrera" required />
                                 <label class="form-label">
                                     <span>Nombre</span>
                                     <span class="form-required ps-1">*</span>
@@ -45,36 +46,22 @@
 
                         <div class="col">
                             <div class="mb-3 form-floating">
-                                <input type="text" class="form-control" name="name" id="name"
-                                    placeholder="Nombre de la carrera" required />
+                                <input type="number" class="form-control" name="nsesio" id="nsesio"
+                                    [(ngModel)]="subject.nsesio" placeholder="NSESIO" required />
                                 <label class="form-label">
-                                    <span>Nombre</span>
+                                    <span>NSESIO</span>
                                     <span class="form-required ps-1">*</span>
                                 </label>
                                 <div class="invalid-feedback">
-                                    <div>Nombre requerido</div>
+                                    <div>NSESIO requerido</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="mb-3 form-floating">
-                                <input type="number" class="form-control" name="name" id="name"
-                                    placeholder="Nombre de la carrera" required />
-                                <label class="form-label">
-                                    <span>Nombre</span>
-                                    <span class="form-required ps-1">*</span>
-                                </label>
-                                <div class="invalid-feedback">
-                                    <div>Nombre requerido</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="mb-3 form-floating">
-                                <input type="number" class="form-control" name="name" id="name"
-                                    placeholder="Nombre de la carrera" required />
+                                <input type="number" class="form-control" name="durses" id="durses"
+                                    [(ngModel)]="subject.durses" placeholder="Duracion" required />
                                 <label class="form-label">
                                     <span>Duracion</span>
                                     <span class="form-required ps-1">*</span>
@@ -85,10 +72,21 @@
                             </div>
                         </div>
 
+                        <div class="col">
+                            <div class="mb-3 form-floating">
+                                <input type="number" class="form-control" name="taller" id="taller"
+                                    [(ngModel)]="subject.taller" placeholder="Taller" />
+                                <label class="form-label">
+                                    <span>Taller</span>
+                                </label>
+                            </div>
+                        </div>
+
                         <div class="col" *ngIf="this.action == 'edit'">
                             <div class="mb-3 form-floating">
-                                <input type="number" class="form-control" name="name" id="name"
-                                    placeholder="Nombre de la carrera" disabled="{{this.action == 'edit'}}" required />
+                                <input type="number" class="form-control" name="fecalt" id="fecalt"
+                                    [(ngModel)]="subject.fecalt" placeholder="Fecha de creado"
+                                    disabled="{{this.action == 'edit'}}" required />
                                 <label class="form-label">
                                     <span>Fecha de alta</span>
                                     <span class="form-required ps-1">*</span>
@@ -100,24 +98,11 @@
                         </div>
 
                         <div class="col">
-                            <div class="mb-3 form-floating">
-                                <input type="number" class="form-control" name="name" id="name"
-                                    placeholder="Nombre de la carrera" required />
-                                <label class="form-label">
-                                    <span>Taller</span>
-                                    <span class="form-required ps-1">*</span>
-                                </label>
-                                <div class="invalid-feedback">
-                                    <div>Taller requerido</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
                             <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
                             <div class="select-wrapper" style="width: 100%; display: flex">
                                 <select name="idsucursal" id="idsucursal" class="form-control"
-                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    [(ngModel)]="subject.tipo" style="margin-right: 20px"
+                                    [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar tipo</option>
                                     <option value="{{ item }}" *ngFor="let item of ['A','B','C']">
                                         {{ item }}
