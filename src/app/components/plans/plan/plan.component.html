@@ -1,1 +1,174 @@
-<p>plan works!</p>
+<div class="container-xl">
+    <div class="header mt-3" style="display: flex">
+        <div class="d-table-cell tar">
+            <i class="fa-solid fa-arrow-left" [routerLink]="['../']"></i>
+        </div>
+        <div class="titleHeader" style="margin-left: 30px">
+            <h2>{{this.action == 'edit' ? 'Editar' : 'Crear'}} plan</h2>
+        </div>
+    </div>
+
+    <form (ngSubmit)="saveCollection()" novalidate>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="hr-text hr-text-left">Datos generales</div>
+
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                        <div class="col">
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control" name="clave" id="clave"
+                                    placeholder="Nombre de la plaza" disabled="{{this.action == 'edit'}}" required />
+                                <label class="form-label">
+                                    <span>Clave</span>
+                                    <span class="form-required ps-1">*</span>
+                                </label>
+                                <div class="invalid-feedback">
+                                    <div>Clave requerida</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar carrera</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar materia</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control" name="area" id="area" placeholder="Area" />
+                                <label class="form-label">
+                                    <span>Area</span>
+                                    <span class="form-required ps-1"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar materia requisito</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar materia requisito</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar materia requisito</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar materia requisito</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar materia requisito</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col mt-3">
+                            <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+                            <div class="select-wrapper" style="width: 100%; display: flex">
+                                <select name="idsucursal" id="idsucursal" class="form-control"
+                                    style="margin-right: 20px" [style]="{ width: '100%', height: '60px' }">
+                                    <option value="undefined">Seleccionar semestre</option>
+                                    <option value="{{ item }}" *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+                                        {{ item }}
+                                    </option>
+                                    <span class="dropdown-icon"><i class="fas fa-chevron-down"
+                                            style="color: #181823"></i></span>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2" style="margin-top: 20px">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-link" [routerLink]="['../']">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

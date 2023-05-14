@@ -6,6 +6,7 @@ import { CareersComponent } from './components/careers/careers.component';
 import { PlansComponent } from './components/plans/plans.component';
 import { SubjectComponent } from './components/subjects/subject/subject.component';
 import { CareerComponent } from './components/careers/career/career.component';
+import { PlanComponent } from './components/plans/plan/plan.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -20,6 +21,8 @@ const routes: Routes = [
       { path: 'careers/:id', component: CareerComponent },
 
       { path: 'plans', component: PlansComponent },
+      { path: 'plans/create', component: PlanComponent },
+      { path: 'plans/:id', component: PlanComponent },
     ]
   },
 ];
