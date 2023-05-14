@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlanModel } from 'src/app/models/plan.model';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class PlanComponent {
   action: any = 'edit';
+  plan: PlanModel = new PlanModel();
 
   constructor(
     private data: DataService,

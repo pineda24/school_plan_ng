@@ -1,4 +1,4 @@
-export class career {
+export class PlanModel {
     clave!: number;
     carrer!: number;
     materi!: number;
