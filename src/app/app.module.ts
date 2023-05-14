@@ -36,6 +36,9 @@ import { StepsModule } from 'primeng/steps';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DragDropModule } from 'primeng/dragdrop';
 import { PanelModule } from 'primeng/panel';
+import { SubjectComponent } from './components/subjects/subject/subject.component';
+import { CareerComponent } from './components/careers/career/career.component';
+import { PlanComponent } from './components/plans/plan/plan.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { PanelModule } from 'primeng/panel';
     SubjectsComponent,
     PlansComponent,
     CareersComponent,
+    SubjectComponent,
+    CareerComponent,
+    PlanComponent,
   ],
   imports: [
     BrowserModule,
