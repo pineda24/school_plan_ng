@@ -12,7 +12,7 @@
         <br />
 
         <div class="col-12">
-            <p-table [value]="[1,2,3,4,5]" responsiveLayout="scroll" [paginator]="true" [rows]="10"
+            <p-table [value]="plans" responsiveLayout="scroll" [paginator]="true" [rows]="10"
                 [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [rowsPerPageOptions]="[10, 25, 50]">
@@ -26,18 +26,17 @@
                         <th style="font-size: small"></th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-load>
+                <ng-template pTemplate="body" let-plan>
                     <tr>
-                        <td class="d-md-table-cell" [routerLink]="['./', load.noprestamo]">
+                        <td class="d-md-table-cell" [routerLink]="['./', plan.clave]">
                             <div class="d-flex align-items-center"></div>
                         </td>
-                        <td style="font-size: small" [routerLink]="['./', load.noprestamo]">23</td>
-                        <td style="font-size: small" [routerLink]="['./', load.noprestamo]">Ingenieria en ciencias de la
-                            computacion</td>
-                        <td style="font-size: small" [routerLink]="['./', load.noprestamo]">Cloud computing</td>
-                        <td style="font-size: small" [routerLink]="['./', load.noprestamo]">4</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.clave}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.carrer}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.materi}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.semest}}</td>
                         <td style="font-size: small">
-                            <button type="button" class="btn btn-link">
+                            <button type="button" class="btn btn-link" (click)="deletePlans(plan.clave)">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </td>
