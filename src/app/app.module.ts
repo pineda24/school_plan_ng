@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,24 @@ import { SubjectsComponent } from './components/subjects/subjects.component';
 import { PlansComponent } from './components/plans/plans.component';
 import { CareersComponent } from './components/careers/careers.component';
 
+//primeng
+import { TabMenuModule } from 'primeng/tabmenu';
+import { ChartModule } from 'primeng/chart';
+import { TabViewModule } from 'primeng/tabview';
+import { CalendarModule } from 'primeng/calendar';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { DialogModule } from 'primeng/dialog';
+import { ListboxModule } from 'primeng/listbox';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { DropdownModule } from 'primeng/dropdown';
+import { ToolbarModule } from 'primeng/toolbar';
+import { TableModule } from 'primeng/table';
+import { MenuModule } from 'primeng/menu';
+import { ImageModule } from 'primeng/image';
+import { StepsModule } from 'primeng/steps';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { DragDropModule } from 'primeng/dragdrop';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -33,7 +53,9 @@ import { CareersComponent } from './components/careers/careers.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
