@@ -1,1 +1,58 @@
-<p>career works!</p>
+<div class="container-xl">
+    <div class="header mt-3" style="display: flex">
+        <div class="d-table-cell tar">
+            <i class="fa-solid fa-arrow-left" [routerLink]="['../']"></i>
+        </div>
+        <div class="titleHeader" style="margin-left: 30px">
+            <h2>{{this.action == 'edit' ? 'Editar' : 'Crear'}} prestamo</h2>
+        </div>
+    </div>
+
+    <form (ngSubmit)="saveCollection()" novalidate>
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="hr-text hr-text-left">Datos generales</div>
+
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                        <div class="col">
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control" name="clave" id="clave"
+                                    placeholder="Nombre de la plaza" disabled="{{this.action == 'edit'}}" required />
+                                <label class="form-label">
+                                    <span>Clave</span>
+                                    <span class="form-required ps-1">*</span>
+                                </label>
+                                <div class="invalid-feedback">
+                                    <div>Clave requerida</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control" name="name" id="name"
+                                    placeholder="Nombre de la carrera" required />
+                                <label class="form-label">
+                                    <span>Nombre</span>
+                                    <span class="form-required ps-1">*</span>
+                                </label>
+                                <div class="invalid-feedback">
+                                    <div>Nombre requerido</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2" style="margin-top: 20px">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-link" [routerLink]="['../']">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
