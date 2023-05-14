@@ -1,0 +1,53 @@
+<header class="navbar navbar-expand-md navbar-light d-print-none w-100 d-flex align-items-center justify-content-center ps-5 pe-5">
+  <div class="container-xl">
+    <h1
+      class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3"
+    >
+      <a
+        href=""
+        [routerLink]="['/dashboard']"
+        class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pr-0 pr-md-3"
+      >
+        <img
+          style="margin-left: 20px"
+          src="https://cdn.theforage.com/vinternships/companyassets/6iLzaJYsXRkxTeWpy/YHHEn27EtTY4gxpH5/1650370429483/JPM_PB_Logo_Horz_Pos_RGB.png"
+          alt="Logo"
+          class="navbar-brand-image"
+        />
+      </a>
+    </h1>
+
+    <div class="navbar-nav flex-row order-md-last">
+      <div class="nav-item dropdown">
+        <a
+          href="javascript:void(0)"
+          class="nav-link d-flex lh-1 text-reset p-0"
+          data-toggle="dropdown"
+        >
+          <span
+            class="avatar avatar-sm"
+            style="background-image: url('https://cdn.britannica.com/61/25261-050-9ED938CF/John-Pierpont-Morgan-1902.jpg')"
+          ></span>
+          <div class="d-none d-sm-block ps-2">
+            <div>{{ "Raul Pineda" }}</div>
+            <div class="mt-1 small text-muted">
+              {{ "Admin" }}
+            </div>
+          </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" [routerLink]="['/profile']">
+            <i class="fas fa-users mr-2"></i>
+            Perfil
+          </a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item cursor-pointer">
+            <i class="fas fa-sign-out-alt mr-2"></i>
+            Cerrar Sesión
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

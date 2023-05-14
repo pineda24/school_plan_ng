@@ -1,0 +1,25 @@
+.nav-link {
+    color: black !important;
+}
+
+.nav-link .active{
+    background-color: #000 !important;
+}
+
+
+
+.fixed-right {
+    position: fixed;
+    right: 0;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* .card{
+    width: 243px !important;
+} */

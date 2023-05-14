@@ -1,0 +1,41 @@
+<div class="navbar-expand-md">
+  <div
+    class="collapse navbar-collapse"
+    [ngClass]="{ show: false }"
+    id="navbar-menu"
+  >
+    <div class="navbar navbar-light">
+      <div class="container-xl">
+        <ul class="navbar-nav">
+          <li class="nav-item" routerLinkActive="active">
+            <a
+              class="nav-link"
+              href="#"
+              [routerLink]="['/stores']"
+              routerLinkActive="active"
+            >
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <i class="fa-solid fa-store"></i>
+              </span>
+              <span class="nav-link-title"> Sucursales </span>
+            </a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a
+              class="nav-link"
+              href="#"
+              [routerLink]="['/loans']"
+              routerLinkActive="active"
+            >
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+              </span>
+              <span class="nav-link-title"> Prestamos </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
