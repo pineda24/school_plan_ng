@@ -20,7 +20,12 @@
                     <tr>
                         <th style="font-size: small" style="width: 50px"></th>
                         <th style="font-size: small">#</th>
-                        <th style="font-size: small">Nombre</th>
+                        <th style="font-size: small">Descripción</th>
+                        <th style="font-size: small">Número de sesiones</th>
+                        <th style="font-size: small">Duración de sesiones</th>
+                        <th style="font-size: small">Taller</th>
+                        <th style="font-size: small">Fecha de alta</th>
+                        <th style="font-size: small">Fecha de baja</th>
                         <th style="font-size: small">Tipo</th>
                         <th style="font-size: small"></th>
                     </tr>
@@ -32,6 +37,11 @@
                         </td>
                         <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.clave}}</td>
                         <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.descri}}</td>
+                        <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.nsesio}}</td>
+                        <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.durses}}</td>
+                        <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.taller}}</td>
+                        <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.fecalt}}</td>
+                        <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.fecbaj}}</td>
                         <td style="font-size: small" [routerLink]="['./', subject.clave]">{{subject.tipo}}</td>
                         <td style="font-size: small">
                             <button type="button" class="btn btn-link" (click)="deleteSubject(subject.clave)">

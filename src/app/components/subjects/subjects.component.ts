@@ -21,10 +21,9 @@ export class SubjectsComponent {
   }
 
   async getSubjects() {
-    await this.data.find('/subjects').subscribe(
+    await this.data.find('/subject').subscribe(
       (res) => {
-        console.log(res);
-        this.subjects = res.prestamos;
+        this.subjects = res.subjects;
       },
       (err) => {
         console.log(err);
@@ -33,9 +32,8 @@ export class SubjectsComponent {
   }
 
   async deleteSubject(id: string) {
-    await this.data.deleteOne('/prestamos', `${id}/`).subscribe(
+    await this.data.deleteOne('/subject', `${id}`).subscribe(
       (res) => {
-        console.log(res);
         this.getSubjects();
       },
       (err) => {

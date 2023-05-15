@@ -21,10 +21,9 @@ export class CareersComponent {
   }
 
   async getCareers() {
-    await this.data.find('/subjects').subscribe(
+    await this.data.find('/carreer').subscribe(
       (res) => {
-        console.log(res);
-        this.careers = res.prestamos;
+        this.careers = res.carreers;
       },
       (err) => {
         console.log(err);
@@ -33,9 +32,8 @@ export class CareersComponent {
   }
 
   async deleteCareer(id: string) {
-    await this.data.deleteOne('/prestamos', `${id}/`).subscribe(
+    await this.data.deleteOne('/carreer', `${id}`).subscribe(
       (res) => {
-        console.log(res);
         this.getCareers();
       },
       (err) => {

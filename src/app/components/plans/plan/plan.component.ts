@@ -11,7 +11,8 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./plan.component.css']
 })
 export class PlanComponent {
-  idPlan: any;
+  idSubject: any;
+  idCareer: any;
   action: any;
   plan: PlanModel = new PlanModel();
   arrayCarrers: Array<CareerModel> = [];
@@ -24,14 +25,15 @@ export class PlanComponent {
   ) { }
 
   async ngOnInit() {
-    this.idPlan = this.route.snapshot.paramMap.get('id');
-    this.action = this.idPlan ? 'edit' : 'create';
+    this.idSubject = this.route.snapshot.paramMap.get('sid');
+    this.idCareer = this.route.snapshot.paramMap.get('cid');
+    this.action = this.idSubject ? 'edit' : 'create';
     this.getSubjects();
     this.getCareers();
     if (this.action == 'edit') {
-      this.data.findById('/prestamos', `${this.idPlan}/`).subscribe(
+      this.data.findBySubjectAndCareer('/plan', `${this.idSubject}`, `${this.idCareer}`).subscribe(
         (res: any) => {
-          this.plan = res.prestamos[0];
+          this.plan = res.plan[0];
         },
         (err) => {
           console.log(err);
@@ -50,10 +52,9 @@ export class PlanComponent {
 
   async createCollection() {
     this.data
-      .insertOne('/prestamos', JSON.stringify(this.plan))
+      .create('/plan', JSON.stringify(this.plan))
       .subscribe(
         (res: any) => {
-          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {
@@ -64,11 +65,10 @@ export class PlanComponent {
 
   async updateCollection() {
     this.data
-      .updateOnee('/prestamos', `${this.idPlan}/`, JSON.stringify(this.plan))
+      .updateBySubjectAndCareer('/plan', `${this.idSubject}`, `${this.idCareer}`, JSON.stringify(this.plan))
       .subscribe(
         (res: any) => {
-          console.log(res);
-          this.router.navigate(['..'], { relativeTo: this.route });
+          this.router.navigate(['../..'], { relativeTo: this.route });
         },
         (err) => {
           console.log(err);
@@ -77,9 +77,9 @@ export class PlanComponent {
   }
 
   getSubjects() {
-    this.data.find('/subjects').subscribe(
+    this.data.find('/subject').subscribe(
       (res: any) => {
-        this.arraySubjects = res.prestamos;
+        this.arraySubjects = res.subjects;
       },
       (err) => {
         console.log(err);
@@ -88,9 +88,9 @@ export class PlanComponent {
   }
 
   getCareers() {
-    this.data.find('/careers').subscribe(
+    this.data.find('/carreer').subscribe(
       (res: any) => {
-        this.arrayCarrers = res.prestamos;
+        this.arrayCarrers = res.carreers;
       },
       (err) => {
         console.log(err);

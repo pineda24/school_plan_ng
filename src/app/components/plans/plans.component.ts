@@ -22,10 +22,9 @@ export class PlansComponent {
   }
 
   async getPlans() {
-    await this.data.find('/subjects').subscribe(
+    await this.data.find('/plan').subscribe(
       (res) => {
-        console.log(res);
-        this.plans = res.prestamos;
+        this.plans = res.plans;
       },
       (err) => {
         console.log(err);
@@ -33,10 +32,9 @@ export class PlansComponent {
     );
   }
 
-  async deletePlans(id: string) {
-    await this.data.deleteOne('/prestamos', `${id}/`).subscribe(
+  async deletePlans(idSubject: string, idCareer: string) {
+    await this.data.deleteBySubjectAndCarreer('/plan', `${idSubject}`, `${idCareer}`).subscribe(
       (res) => {
-        console.log(res);
         this.getPlans();
       },
       (err) => {

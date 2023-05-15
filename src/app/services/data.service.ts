@@ -12,124 +12,31 @@ export class DataService {
     return this.http.get<any>(environment.serverBaseURL + collection + '/');
   }
 
-  findByParams(collection: String, params: String) {
-    return this.http.get<any>(
-      environment.serverBaseURL + collection + '/' + params
-    );
-  }
-
-  findByIdCollection(collection: String, params: String) {
-    return this.http.get<any>(
-      environment.serverBaseURL + collection + '?' + params
-    );
-  }
-
-  findByFilter(collection: String, params: any) {
-    return this.http.post<any>(
-      environment.serverBaseURL + collection + '/',
-      params
-    );
-  }
-
-  findOverduePayments(params: any) {
-    return this.http.post<any>(
-      environment.serverBaseURL + '/users/findOverduePayments?',
-      params
-    );
-  }
-
-  getFilteredUserCount(params: any) {
-    return this.http.post<any>(
-      environment.serverBaseURL + '/users/getFilteredUserCount?',
-      params
-    );
-  }
-
-  findMultipleLastPayments(params: any) {
-    return this.http.post<any>(
-      environment.serverBaseURL + '/payments/findMultipleLastPayments?',
-      params
-    );
-  }
-
-  getPaymentByInvoice(query: Number) {
-    return this.http.get<any>(
-      environment.serverBaseURL +
-        '/payments/getPaymentByInvoice?invoice=' +
-        query
-    );
-  }
-
-  getPaymentsFiltered(params: any) {
-    return this.http.post<any>(
-      environment.serverBaseURL + '/payments/getPaymentsFiltered?',
-      params
-    );
-  }
-
-  findPayments(params: any) {
-    return this.http.post<any>(
-      environment.serverBaseURL + '/payments/findPayments?',
-      params
-    );
-  }
-
-  findBy(collection: String, query: URLSearchParams) {
-    return this.http.get<any>(
-      environment.serverBaseURL + collection + '?' + query
-    );
-  }
-
   findById(collection: String, id: String) {
-    return this.http.get<any>(
-      environment.serverBaseURL + collection + '/' + id
-    );
+    return this.http.get<any>(environment.serverBaseURL + collection + '/' + id);
   }
 
-  insertOne(collection: String, obj: any) {
-    return this.http.post(environment.serverBaseURL + collection + '/', obj);
+  findBySubjectAndCareer(collection: String, idSubject: String, idCareer: String) {
+    return this.http.get<any>(environment.serverBaseURL + collection + '/' + idSubject + '/' + idCareer);
   }
 
-  insertMany(collection: String, list: Array<any>) {
-    return this.http.post(environment.serverBaseURL + collection + '/', list);
+  create(collection: String, data: any) {
+    return this.http.post<any>(environment.serverBaseURL + collection + '/', data);
   }
 
-  updateOnee(collection: String, id: String, obj: any) {
-    return this.http.put(
-      environment.serverBaseURL + collection + '/' + id,
-      obj
-    );
+  update(collection: String, id: String, data: any) {
+    return this.http.put<any>(environment.serverBaseURL + collection + '/' + id, data);
   }
 
-  updateOne(collection: String, obj: any) {
-    return this.http.patch(environment.serverBaseURL + collection + '/', obj);
-  }
-
-  updateMany(collection: String, obj: String) {
-    return this.http.put(environment.serverBaseURL + collection + '/', obj);
+  updateBySubjectAndCareer(collection: String, idSubject: String, idCareer: String, data: any) {
+    return this.http.put<any>(environment.serverBaseURL + collection + '/' + idSubject + '/' + idCareer, data);
   }
 
   deleteOne(collection: String, id: String) {
-    return this.http.delete(environment.serverBaseURL + collection + '/' + id);
+    return this.http.delete<any>(environment.serverBaseURL + collection + '/' + id);
   }
 
-  deleteMany(collection: String, obj: String) {
-    return this.http.delete(environment.serverBaseURL + collection + '/' + obj);
-  }
-
-  //   insertOneFile(collection, fileToUpload: File) {
-  //     const formData: FormData = new FormData();
-  //     formData.append('file', fileToUpload, fileToUpload.name);
-  //     return this.http.post(environment.serverBaseURL +  collection + "/", formData);
-  //   }
-
-  count(collection: String) {
-    return this.http.get<any>(environment.serverBaseURL + collection + '/');
-  }
-
-  countWithParams(collection: String, params: String) {
-    return this.http.get<any>(
-      environment.serverBaseURL + collection + '?' + params
-    );
+  deleteBySubjectAndCarreer(collection: String, idSubject: String, idCareer: String) {
+    return this.http.delete<any>(environment.serverBaseURL + collection + '/' + idSubject + '/' + idCareer);
   }
 }

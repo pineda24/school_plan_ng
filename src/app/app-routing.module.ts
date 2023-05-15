@@ -22,7 +22,7 @@ const routes: Routes = [
 
       { path: 'plans', component: PlansComponent },
       { path: 'plans/create', component: PlanComponent },
-      { path: 'plans/:id', component: PlanComponent },
+      { path: 'plans/:sid/:cid', component: PlanComponent },
     ]
   },
 ];

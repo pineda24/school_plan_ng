@@ -19,24 +19,40 @@
                 <ng-template pTemplate="header">
                     <tr>
                         <th style="font-size: small" style="width: 50px"></th>
-                        <th style="font-size: small">#</th>
+                        <th style="font-size: small">Clave</th>
                         <th style="font-size: small">Carrera</th>
                         <th style="font-size: small">Materia</th>
+                        <th style="font-size: small">Fecha de alta</th>
+                        <th style="font-size: small">Fecha de baja</th>
+                        <th style="font-size: small">Area</th>
+                        <th style="font-size: small">Reqsim</th>
+                        <th style="font-size: small">Requi1</th>
+                        <th style="font-size: small">Requi2</th>
+                        <th style="font-size: small">Requi3</th>
+                        <th style="font-size: small">Requi4</th>
                         <th style="font-size: small">Semestre</th>
                         <th style="font-size: small"></th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-plan>
                     <tr>
-                        <td class="d-md-table-cell" [routerLink]="['./', plan.clave]">
+                        <td class="d-md-table-cell" [routerLink]="['./', plan.carrer, plan.materi]">
                             <div class="d-flex align-items-center"></div>
                         </td>
-                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.clave}}</td>
-                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.carrer}}</td>
-                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.materi}}</td>
-                        <td style="font-size: small" [routerLink]="['./', plan.clave]">{{plan.semest}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.clave}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.carrer}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.materi}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.fecalt}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.fecbaj}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.area}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.reqsim}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.requi1}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.requi2}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.requi3}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.requi4}}</td>
+                        <td style="font-size: small" [routerLink]="['./', plan.carrer, plan.materi]">{{plan.semest}}</td>
                         <td style="font-size: small">
-                            <button type="button" class="btn btn-link" (click)="deletePlans(plan.clave)">
+                            <button type="button" class="btn btn-link" (click)="deletePlans(plan.carrer, plan.materi)">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </td>

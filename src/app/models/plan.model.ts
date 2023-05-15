@@ -1,14 +1,14 @@
 export class PlanModel {
-    clave!: number;
+    clave!: string;
     carrer!: number;
     materi!: number;
     fecalt!: Date;
-    fecbaj!: Date;
-    area!: string;
-    reqsim!: number;
-    requi1!: number;
-    requi2!: number;
-    requi3!: number;
-    requi4!: number;
+    fecbaj?: Date | null = null;
+    area?: string | null = null;
+    reqsim?: number | null = null;
+    requi1?: number | null = null;
+    requi2?: number | null = null;
+    requi3?: number | null = null;
+    requi4?: number | null = null;
     semest!: number;
 }

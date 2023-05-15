@@ -82,11 +82,11 @@
                             </div>
                         </div>
 
-                        <div class="col" *ngIf="this.action == 'edit'">
+                        <div class="col">
                             <div class="mb-3 form-floating">
-                                <input type="number" class="form-control" name="fecalt" id="fecalt"
+                                <input type="date" class="form-control" name="fecalt" id="fecalt"
                                     [(ngModel)]="subject.fecalt" placeholder="Fecha de creado"
-                                    disabled="{{this.action == 'edit'}}" required />
+                                    required />
                                 <label class="form-label">
                                     <span>Fecha de alta</span>
                                     <span class="form-required ps-1">*</span>
@@ -98,13 +98,28 @@
                         </div>
 
                         <div class="col">
+                            <div class="mb-3 form-floating">
+                                <input type="date" class="form-control" name="fecbaj" id="fecbaj"
+                                    [(ngModel)]="subject.fecbaj" placeholder="Fecha de creado"
+                                    required />
+                                <label class="form-label">
+                                    <span>Fecha de baja</span>
+                                    <span class="form-required ps-1">*</span>
+                                </label>
+                                <div class="invalid-feedback">
+                                    <div>Fecha de baja requerido</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
                             <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
                             <div class="select-wrapper" style="width: 100%; display: flex">
                                 <select name="idsucursal" id="idsucursal" class="form-control"
                                     [(ngModel)]="subject.tipo" style="margin-right: 20px"
                                     [style]="{ width: '100%', height: '60px' }">
                                     <option value="undefined">Seleccionar tipo</option>
-                                    <option value="{{ item }}" *ngFor="let item of ['A','B','C']">
+                                    <option value="{{ item }}" *ngFor="let item of ['L','P','V']">
                                         {{ item }}
                                     </option>
                                     <span class="dropdown-icon"><i class="fas fa-chevron-down"

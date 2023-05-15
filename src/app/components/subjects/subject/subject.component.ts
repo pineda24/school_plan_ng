@@ -24,9 +24,9 @@ export class SubjectComponent {
     this.idSubject = this.route.snapshot.paramMap.get('id');
     this.action = this.idSubject ? 'edit' : 'create';
     if (this.action == 'edit') {
-      this.data.findById('/prestamos', `${this.idSubject}/`).subscribe(
+      this.data.findById('/subject', `${this.idSubject}`).subscribe(
         (res: any) => {
-          this.subject = res.prestamos[0];
+          this.subject = res.subject[0];
         },
         (err) => {
           console.log(err);
@@ -45,10 +45,9 @@ export class SubjectComponent {
 
   async createCollection() {
     this.data
-      .insertOne('/prestamos', JSON.stringify(this.subject))
+      .create('/subject', JSON.stringify(this.subject))
       .subscribe(
         (res: any) => {
-          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {
@@ -59,10 +58,9 @@ export class SubjectComponent {
 
   async updateCollection() {
     this.data
-      .updateOnee('/prestamos', `${this.idSubject}/`, JSON.stringify(this.subject))
+      .update('/subject', `${this.idSubject}`, JSON.stringify(this.subject))
       .subscribe(
         (res: any) => {
-          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {

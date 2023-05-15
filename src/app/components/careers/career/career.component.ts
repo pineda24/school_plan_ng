@@ -24,9 +24,9 @@ export class CareerComponent {
     this.idCareer = this.route.snapshot.paramMap.get('id');
     this.action = this.idCareer ? 'edit' : 'create';
     if (this.action == 'edit') {
-      this.data.findById('/prestamos', `${this.idCareer}/`).subscribe(
+      this.data.findById('/carreer', `${this.idCareer}`).subscribe(
         (res: any) => {
-          this.career = res.prestamos[0];
+          this.career = res.carreer[0];
         },
         (err) => {
           console.log(err);
@@ -45,10 +45,9 @@ export class CareerComponent {
 
   async createCollection() {
     this.data
-      .insertOne('/prestamos', JSON.stringify(this.career))
+      .create('/carreer', JSON.stringify(this.career))
       .subscribe(
         (res: any) => {
-          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {
@@ -59,10 +58,9 @@ export class CareerComponent {
 
   async updateCollection() {
     this.data
-      .updateOnee('/prestamos', `${this.idCareer}/`, JSON.stringify(this.career))
+      .update('/carreer', `${this.idCareer}`, JSON.stringify(this.career))
       .subscribe(
         (res: any) => {
-          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {

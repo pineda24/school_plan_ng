@@ -3,8 +3,8 @@ export class SujectModel {
   descri!: string;
   nsesio!: number;
   durses!: number;
-  taller!: number;
+  taller?: number | null = null;
   fecalt!: Date;
-  fecbaj!: Date;
+  fecbaj?: Date | null = null;
   tipo!: string;
 }
